@@ -1,14 +1,15 @@
 {
-  "name": "cra-ts-fsd-template",
+  "name": "countries-info-ts",
   "version": "0.1.0",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bjorn86/cra-ts-fsd-template.git"
+    "url": "git+https://github.com/Bjorn86/countries-info-ts.git"
   },
   "bugs": {
-    "url": "https://github.com/Bjorn86/cra-ts-fsd-template/issues"
+    "url": "https://github.com/Bjorn86/countries-info-ts/issues"
   },
+  "homepage": "https://bjorn86.github.io/countries-info-ts/",
   "author": "Danila Legkobytov <legkobytov-danila@yandex.ru>",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
@@ -18,12 +19,19 @@
     "@types/node": "^16.18.68",
     "@types/react": "^18.2.45",
     "@types/react-dom": "^18.2.18",
-    "clsx": "^2.0.0",
+    "@types/uuid": "^9.0.7",
+    "axios": "^1.6.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-helmet-async": "^2.0.4",
+    "react-redux": "^9.0.4",
     "react-scripts": "5.0.1",
+    "redux": "^5.0.1",
+    "redux-persist": "^6.0.0",
     "sass": "^1.69.5",
+    "styled-components": "^6.1.6",
     "typescript": "^4.9.5",
+    "uuid": "^9.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -35,7 +43,9 @@
     "lint:fix": "npm run lint -- --fix",
     "format": "prettier . --write",
     "commit": "cz",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -104,9 +114,10 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-react": "^7.28.0",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^6.1.1",
+    "husky": "^8.0.0",
     "lint-staged": "^15.2.0",
-    "prettier": "^3.1.1",
-    "husky": "^8.0.0"
+    "prettier": "^3.1.1"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": "npm run lint",
